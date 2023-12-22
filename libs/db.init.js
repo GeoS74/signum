@@ -38,6 +38,7 @@ const data = {
       createdat TIMESTAMP NOT NULL DEFAULT NOW(),
       updatedat TIMESTAMP NOT NULL DEFAULT NOW(),
       title TEXT NOT NULL,
+      phone TEXT NOT NULL,
       products TEXT,
       contract BOOLEAN,
       payment TEXT,

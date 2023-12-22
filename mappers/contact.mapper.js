@@ -1,6 +1,7 @@
 module.exports = (data) => ({
   id: data.id,
   title: data.title,
+  phone: data.phone,
   createdat: data.createdat,
   updatedat: data.updatedat,
   products: data.products || '',

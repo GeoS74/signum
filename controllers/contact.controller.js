@@ -65,8 +65,8 @@ async function _getSearchContacts(search) {
 
 async function _addContact(data) {
   return db.query(`INSERT INTO contacts 
-    (title, products, contract, payment, site, email, name, info) 
-    VALUES ($1, $2, $3, $4, $5, $6, $7, $8) 
+    (title, products, contract, payment, site, email, name, info, phone) 
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) 
     RETURNING *
     `, [
     data.title,
@@ -77,6 +77,7 @@ async function _addContact(data) {
     data.email,
     data.name,
     data.info,
+    data.phone,
   ])
     .then((res) => res.rows[0]);
 }
@@ -91,7 +92,8 @@ async function _updateContact(id, data) {
       site=$6,
       email=$7,
       name=$8,
-      info=$9
+      info=$9,
+      phone=$10
     WHERE id=$1
     RETURNING *
     `, [
@@ -104,6 +106,7 @@ async function _updateContact(id, data) {
     data.email,
     data.name,
     data.info,
+    data.phone,
   ])
     .then((res) => res.rows[0]);
 }
